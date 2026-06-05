@@ -14,14 +14,14 @@ background:#000;
 
 .background{
 position:fixed;
-top:-3%;
-left:-3%;
-width:106%;
-height:106%;
+top:-5%;
+left:-5%;
+width:110%;
+height:110%;
 background-size:cover;
 background-position:center;
-transition:transform .2s linear;
 will-change:transform;
+transform:scale(1.06);
 }
 
 .desktop-bg{
