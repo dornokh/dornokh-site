@@ -1,19 +1,24 @@
 const backgrounds = document.querySelectorAll('.background');
 
-let targetX = 0;
-let targetY = 0;
+let mouseX = 0;
+let mouseY = 0;
 
 let currentX = 0;
 let currentY = 0;
 
+document.addEventListener('mousemove', e => {
+    mouseX = (e.clientX / window.innerWidth - 0.5) * 10;
+    mouseY = (e.clientY / window.innerHeight - 0.5) * 10;
+});
+
 function animate() {
 
-    currentX += (targetX - currentX) * 0.06;
-    currentY += (targetY - currentY) * 0.06;
+    currentX += (mouseX - currentX) * 0.02;
+    currentY += (mouseY - currentY) * 0.02;
 
     backgrounds.forEach(bg => {
         bg.style.transform =
-            `translate(${currentX}px, ${currentY}px)`;
+            `translate3d(${currentX}px, ${currentY}px, 0)`;
     });
 
     requestAnimationFrame(animate);
@@ -24,10 +29,10 @@ animate();
 document.addEventListener('mousemove', (e) => {
 
     targetX =
-        (e.clientX / window.innerWidth - 0.5) * 20;
+    (e.clientX / window.innerWidth - 0.5) * 10;
 
-    targetY =
-        (e.clientY / window.innerHeight - 0.5) * 20;
+targetY =
+    (e.clientY / window.innerHeight - 0.5) * 10;
 
 });
 
