@@ -91,7 +91,7 @@ z-index:10;
 }
 
 .logo-mobile{
-width:215px;
+width:200px;
 max-width:70vw;
 height:auto;
 }
@@ -102,7 +102,7 @@ position:absolute;
 left:50%;
 bottom:50px;
 transform:translateX(-50%);
-width:125px;
+width:110px;
 height:auto;
 z-index:10;
 }
