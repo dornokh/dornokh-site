@@ -33,3 +33,20 @@ function animate() {
 }
 
 animate();
+
+if (window.innerWidth <= 768) {
+
+    let drift = 0;
+
+    function mobileDrift() {
+
+        drift += 0.003;
+
+        targetX = Math.sin(drift) * 12;
+        targetY = Math.cos(drift * 0.7) * 8;
+
+        requestAnimationFrame(mobileDrift);
+    }
+
+    mobileDrift();
+}
