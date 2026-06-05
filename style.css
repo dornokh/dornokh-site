@@ -114,5 +114,5 @@ transition:opacity 1,5s ease;
 }
 
 body.loaded{
-opacity:1;
+opacity:100;
 }
