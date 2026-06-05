@@ -90,8 +90,10 @@ if(frameCount > 80){
 
 emails.forEach(email => {
     email.style.opacity = emailOpacity;
-    email.style.transform =
-        `translateY(${emailY}px) scale(${emailScale})`;
+    if(!email.classList.contains('email-mobile')) {
+        email.style.transform =
+            `translateY(${emailY}px) scale(${emailScale})`;
+    }
 });
     
     requestAnimationFrame(animate);
