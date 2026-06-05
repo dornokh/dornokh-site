@@ -31,3 +31,15 @@ bg.style.transform = `translate(${x}px, ${y}px)`;
 });
 
 }
+document.addEventListener('touchmove',(e)=>{
+
+const touch = e.touches[0];
+
+const x = (touch.clientX / window.innerWidth - 0.5) * 12;
+const y = (touch.clientY / window.innerHeight - 0.5) * 12;
+
+backgrounds.forEach(bg=>{
+bg.style.transform = `translate(${x}px, ${y}px)`;
+});
+
+});
