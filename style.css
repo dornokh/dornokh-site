@@ -20,8 +20,8 @@ width:110%;
 height:110%;
 background-size:cover;
 background-position:center;
-will-change:transform;
-transform:scale(1.06);
+will-change:transform, opacity;
+opacity:0;
 }
 
 .desktop-bg{
