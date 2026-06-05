@@ -93,7 +93,7 @@ emails.forEach(email => {
     email.style.opacity = emailOpacity;
 
     email.style.transform =
-        `translateY(${emailY}px) scale(${emailScale})`;
+    `translateX(-50%) translateY(${emailY}px) scale(${emailScale})`;
 
 });
     
