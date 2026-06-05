@@ -14,6 +14,9 @@ let emailOpacity = 0;
 let logoScale = 1.15;
 let emailScale = 1.12;
 
+let logoY = 20;
+let emailY = 15;
+
 let frameCount = 0;
 
 backgrounds.forEach(bg => {
@@ -48,6 +51,9 @@ function animate() {
 
     logoScale += (1 - logoScale) * 0.03;
     emailScale += (1 - emailScale) * 0.03;
+
+    logoY += (0 - logoY) * 0.02;
+    emailY += (0 - emailY) * 0.02;
     
     currentScale += (1.08 - currentScale) * 0.01;
     currentOpacity += (1 - currentOpacity) * 0.01;
@@ -78,7 +84,7 @@ if(frameCount > 80){
     logo.style.opacity = logoOpacity;
 
     logo.style.transform =
-        `scale(${logoScale})`;
+        `translateY(${logoY}px) scale(${logoScale})`;
 
 });
 
@@ -87,7 +93,7 @@ emails.forEach(email => {
     email.style.opacity = emailOpacity;
 
     email.style.transform =
-        `scale(${emailScale})`;
+        `translateY(${emailY}px) scale(${emailScale})`;
 
 });
     
