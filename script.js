@@ -11,6 +11,9 @@ const emails = document.querySelectorAll(
 let logoOpacity = 0;
 let emailOpacity = 0;
 
+let logoScale = 1.06;
+let emailScale = 1.05;
+
 let frameCount = 0;
 
 backgrounds.forEach(bg => {
@@ -42,6 +45,9 @@ let currentOpacity = 0;
 function animate() {
 
     frameCount++;
+
+    logoScale += (1 - logoScale) * 0.03;
+    emailScale += (1 - emailScale) * 0.03;
     
     currentScale += (1.08 - currentScale) * 0.01;
     currentOpacity += (1 - currentOpacity) * 0.01;
@@ -67,12 +73,22 @@ if(frameCount > 80){
 
     });
 
-    logos.forEach(logo => {
+   logos.forEach(logo => {
+
     logo.style.opacity = logoOpacity;
+
+    logo.style.transform =
+        `scale(${logoScale})`;
+
 });
 
 emails.forEach(email => {
+
     email.style.opacity = emailOpacity;
+
+    email.style.transform =
+        `scale(${emailScale})`;
+
 });
     
     requestAnimationFrame(animate);
