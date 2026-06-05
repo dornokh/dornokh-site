@@ -1,3 +1,13 @@
+window.addEventListener('load', () => {
+
+    setTimeout(() => {
+
+        document.body.classList.add('loaded');
+
+    }, 150);
+
+});
+
 const backgrounds = document.querySelectorAll('.background');
 
 let targetX = 0;
