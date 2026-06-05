@@ -1,20 +1,15 @@
 const backgrounds = document.querySelectorAll('.background');
 
-let mouseX = 0;
-let mouseY = 0;
+let targetX = 0;
+let targetY = 0;
 
 let currentX = 0;
 let currentY = 0;
 
-document.addEventListener('mousemove', e => {
-    mouseX = (e.clientX / window.innerWidth - 0.5) * 10;
-    mouseY = (e.clientY / window.innerHeight - 0.5) * 10;
-});
-
 function animate() {
 
-    currentX += (mouseX - currentX) * 0.02;
-    currentY += (mouseY - currentY) * 0.02;
+    currentX += (targetX - currentX) * 0.03;
+    currentY += (targetY - currentY) * 0.03;
 
     backgrounds.forEach(bg => {
         bg.style.transform =
@@ -29,12 +24,24 @@ animate();
 document.addEventListener('mousemove', (e) => {
 
     targetX =
-    (e.clientX / window.innerWidth - 0.5) * 10;
+        (e.clientX / window.innerWidth - 0.5) * 22;
 
-targetY =
-    (e.clientY / window.innerHeight - 0.5) * 10;
+    targetY =
+        (e.clientY / window.innerHeight - 0.5) * 22;
 
 });
+
+document.addEventListener('touchmove', (e) => {
+
+    const touch = e.touches[0];
+
+    targetX =
+        (touch.clientX / window.innerWidth - 0.5) * 18;
+
+    targetY =
+        (touch.clientY / window.innerHeight - 0.5) * 18;
+
+}, { passive: true });});
 
 document.addEventListener('touchmove', (e) => {
 
