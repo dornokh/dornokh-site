@@ -1,5 +1,18 @@
 const backgrounds = document.querySelectorAll('.background');
 
+const logos = document.querySelectorAll(
+'.logo-desktop, .logo-mobile'
+);
+
+const emails = document.querySelectorAll(
+'.email-desktop, .email-mobile'
+);
+
+let logoOpacity = 0;
+let emailOpacity = 0;
+
+let frameCount = 0;
+
 backgrounds.forEach(bg => {
     bg.style.opacity = "0";
 });
@@ -28,8 +41,19 @@ let currentOpacity = 0;
 
 function animate() {
 
+    frameCount++;
+    
     currentScale += (1.08 - currentScale) * 0.01;
-    currentOpacity += (1 - currentOpacity) * 0.005;
+    currentOpacity += (1 - currentOpacity) * 0.01;
+
+    if(frameCount > 40){
+    logoOpacity += (1 - logoOpacity) * 0.02;
+}
+
+if(frameCount > 80){
+    emailOpacity += (1 - emailOpacity) * 0.02;
+
+}
 
     currentX += (targetX - currentX) * 0.03;
     currentY += (targetY - currentY) * 0.03;
@@ -43,6 +67,14 @@ function animate() {
 
     });
 
+    logos.forEach(logo => {
+    logo.style.opacity = logoOpacity;
+});
+
+emails.forEach(email => {
+    email.style.opacity = emailOpacity;
+});
+    
     requestAnimationFrame(animate);
 }
 
