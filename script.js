@@ -1,5 +1,8 @@
-
 const backgrounds = document.querySelectorAll('.background');
+
+backgrounds.forEach(bg => {
+    bg.style.opacity = "0";
+});
 
 let targetX = 0;
 let targetY = 0;
@@ -20,14 +23,24 @@ document.addEventListener('touchmove', (e) => {
 
 }, { passive: true });
 
+let currentScale = 1.12;
+let currentOpacity = 0;
+
 function animate() {
+
+    currentScale += (1.08 - currentScale) * 0.01;
+    currentOpacity += (1 - currentOpacity) * 0.02;
 
     currentX += (targetX - currentX) * 0.03;
     currentY += (targetY - currentY) * 0.03;
 
     backgrounds.forEach(bg => {
+
         bg.style.transform =
-            `translate3d(${currentX}px, ${currentY}px, 0) scale(1.08)`;
+            `translate3d(${currentX}px, ${currentY}px, 0) scale(${currentScale})`;
+
+        bg.style.opacity = currentOpacity;
+
     });
 
     requestAnimationFrame(animate);
