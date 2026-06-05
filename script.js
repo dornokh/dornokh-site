@@ -11,8 +11,8 @@ const emails = document.querySelectorAll(
 let logoOpacity = 0;
 let emailOpacity = 0;
 
-let logoScale = 1.06;
-let emailScale = 1.05;
+let logoScale = 1.15;
+let emailScale = 1.12;
 
 let frameCount = 0;
 
