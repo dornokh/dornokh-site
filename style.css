@@ -44,6 +44,7 @@ z-index:10;
 .logo-desktop{
 width:260px;
 height:auto;
+opacity:0;
 }
 
 .email-desktop{
@@ -53,6 +54,7 @@ bottom:60px;
 width:140px;
 height:auto;
 z-index:10;
+opacity:0;
 }
 
 .mobile-content{
@@ -94,6 +96,7 @@ z-index:10;
 width:200px;
 max-width:70vw;
 height:auto;
+opacity:0;
 }
 
 .email-mobile{
@@ -105,6 +108,7 @@ transform:translateX(-50%);
 width:110px;
 height:auto;
 z-index:10;
+opacity:0;
 }
 
 
