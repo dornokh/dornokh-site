@@ -29,7 +29,7 @@ let currentOpacity = 0;
 function animate() {
 
     currentScale += (1.08 - currentScale) * 0.01;
-    currentOpacity += (1 - currentOpacity) * 0.02;
+    currentOpacity += (1 - currentOpacity) * 0.01;
 
     currentX += (targetX - currentX) * 0.03;
     currentY += (targetY - currentY) * 0.03;
